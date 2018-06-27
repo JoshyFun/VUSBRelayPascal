@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="4">
+    <PathDelim Value="\"/>
+    <Name Value="vusbrelay"/>
+    <AddToProjectUsesSection Value="True"/>
+    <Author Value="José Mejuto (joshyfun@gmail.com)"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="..\src"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+    </CompilerOptions>
+    <Description Value=" --------------------------------------
+  USBRelayLIB
+ --------------------------------------
+
+ This library simplified the handling of V-USB [1] relays identified
+ by the system as USB HID devices. This relays are cheap and easy to
+ find in many online shops. They can be used, in example to power off
+ your router when internet connectivity is drop, and repower it on
+ after some time.
+
+ It supports as USB API interface:
+  -Native Windows (Shoud work from XP to 10, 32 and 64 bits)
+  -libusb-1.0 (Linux 32 and 64 bits, and Windows 32 bits)
+  -libusb-0.1 (Linux 32 and 64 bits)
+
+ Library defaults to:
+  -Unix: libusb-1.0
+  -Windows: Windows
+
+  The use of libusb-1.0 can be forced by define &quot;USBHID_LIBUSB10&quot;.
+  &quot;USBHID_QUIET&quot; supresses any console output.
+
+ libusb-1.0 and Windows supports dynamic library loading using the define &quot;USBHID_DYNAMIC&quot;.
+
+ License:
+  LGLP [2] - The same as Free Pascal compiler and Lazarus LCL.
+
+ Inspired by:
+  The project at https://github.com/pavel-a/usb-relay-hid
+
+ Copyright:
+  José Mejuto (joshyfun at gmail.com)
+
+ References:
+  [1] https://www.obdev.at/products/vusb/index.html
+  [2] https://www.gnu.org/licenses/lgpl-3.0.txt
+"/>
+    <License Value="LGPL - GNU LESSER GENERAL PUBLIC LICENSE
+https://www.gnu.org/licenses/lgpl-3.0.txt"/>
+    <Version Major="1"/>
+    <Files Count="9">
+      <Item1>
+        <Filename Value="..\src\hid_libusb.pas"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="hid_libusb"/>
+      </Item1>
+      <Item2>
+        <Filename Value="..\src\hid_libusb10mini.pas"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="hid_libusb10mini"/>
+      </Item2>
+      <Item3>
+        <Filename Value="..\src\hid_windows.pas"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="hid_windows"/>
+      </Item3>
+      <Item4>
+        <Filename Value="..\src\libusb.pas"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="libusb"/>
+      </Item4>
+      <Item5>
+        <Filename Value="..\src\libusb10mini.pas"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="libusb10mini"/>
+      </Item5>
+      <Item6>
+        <Filename Value="..\src\utextstreamfilter.pas"/>
+        <UnitName Value="utextstreamfilter"/>
+      </Item6>
+      <Item7>
+        <Filename Value="..\src\uusbids.pas"/>
+        <UnitName Value="uusbids"/>
+      </Item7>
+      <Item8>
+        <Filename Value="..\src\uusbrelaylib.pas"/>
+        <UnitName Value="uusbrelaylib"/>
+      </Item8>
+      <Item9>
+        <Filename Value="..\src\uvusbrelaybase.pas"/>
+        <UnitName Value="uvusbrelaybase"/>
+      </Item9>
+    </Files>
+    <RequiredPkgs Count="1">
+      <Item1>
+        <PackageName Value="FCL"/>
+      </Item1>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>
