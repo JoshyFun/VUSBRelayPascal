@@ -19,8 +19,13 @@ uses
 
 const
   {$IFDEF WINDOWS}
-  LIBUSB_LIB='libusb-1.0.dll';
-  LIBUSB_LIB_DYN='libusb-1.0.dll';
+    {$IFDEF WIN64}
+      LIBUSB_LIB='libusb-1.0_x64.dll';
+      LIBUSB_LIB_DYN='libusb-1.0_x64.dll';
+    {$ELSE}
+      LIBUSB_LIB='libusb-1.0_x86.dll';
+      LIBUSB_LIB_DYN='libusb-1.0_x86.dll';
+    {$ENDIF}
   {$ELSE}
   LIBUSB_LIB='usb-1.0';
   {$IFNDEF LIBUSB_LIB_DYN}
